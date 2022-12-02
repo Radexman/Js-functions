@@ -2,16 +2,20 @@
 // Functions can take arguments and parameters do make calculations
 // If we want to use function output we need to return it's value
 
-function calculateSizes(width, height, depth) {
+function getSizes (width, height, depth) {
     let area = width * height;
     let volume = width * height * depth;
     let sizes = [area, volume];
     return sizes;
 }
 
-let areaOne = calculateSizes(10, 5, 2)[0];
-let volumeOne = calculateSizes(10, 5, 2)[1];
-console.log(areaOne);
+let widthOne = 5;
+let heightOne = 5;
+let depthOne = 3;
+let zoneOne = getSizes(widthOne, heightOne, depthOne)[0];
+let volumeOne = getSizes(widthOne, heightOne, depthOne)[1];
+
+console.log(zoneOne);
 console.log(volumeOne);
 
 // ============================================================ Objects ================================================================ //
@@ -67,3 +71,23 @@ hotelRoomsEl.textContent+= hotelRooms;
 hotelBookedRoomsEl.textContent+= hotelBookedRooms;
 hotelRoomTypesEl.textContent+= hotelRoomTypes;
 hotelAvialableRoomsEl.textContent = aviability + hotel.checkAvialability();
+
+let home = {
+    family: 'Siek',
+    people: 4,
+    tenants: [
+        'Kasia',
+        'Piotr',
+        'Bartek',
+        'Radek'
+    ],
+    peopleInside: function(){
+        return console.log(this.tenants)
+    }
+}
+
+let familyName = home.family;
+console.log(familyName);
+
+let familyMembers= home.peopleInside;
+console.log(familyMembers);
